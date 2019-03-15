@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<head>
+<script
+use Encode;
+use Encode::JavaScript::Cyrillic;
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<meta charset=utf-8>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+<meta charset=utf-8>
+body {
+  margin: 0;
+  font-family: Comic;
+}
+div.a {
+    text-align: center;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #111;
+}
+.topnav a {
+  float: left;
+  color: #333;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+.topnav a:hover {
+  background-color: #111;
+  color: black;
+}
+.topnav a.active {
+  background-color: #111;
+  color: white;
+}
+</style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  padding-left: 100px;
+  float:left;
+  text-align: center;
+  width: 20%;
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #66ccff;
+}
+.main {
+  float: center;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.right {
+   background-color: #66ccff;
+  float: right;
+  height: 100;
+  width: 500;
+  padding: 115px 15px;
+  margin-top: 105px;
+}
+@media only screen and (max-width:800px) {
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</style>
+</head>
+
+
+
+
+
+
+
+<body style="font-family:Comic;">
+
+  <div class="topnav">
+    <a class="active" href="#glavna stranica">Home</a>
+    <a href="">Източници</a>
+    <a href="">Контакти</a>
+
+  </div>
+
+  <div style="padding-right:40px">
+
+  </div>
+
+  <input type="text" id="myInput" placeholder="Търси симптоми..." title="Type in a name">
+  <input type="submit" onclick="vzimane_st()" value="Търси">
+
+
+
+
+<script type="text/javascript">
+  var auchaimer="памет загуба";
+  var diabet="наднормено тегло, често уриниране, загуба тегло, бавно зарастване рани, диабет";
+  var gastro="болки корема, панкреатит, стомах";
+
+  function findWord(word, str) {
+  return RegExp('\\b'+ word +'\\b').test(str)
+}
+
+  function vzimane_st(){
+    ul=document.getElementById("myUL");
+
+   $('#myUL').empty();
+   var text=document.getElementById("myInput").value;
+   var res=new RegExp(text, "g")
+   var izvod_auc=auchaimer.match(res);
+   var izvod_diabet=diabet.match(res);
+   var izvod_gastro=gastro.match(res);
+   if (izvod_auc.length>0){
+     var li=document.createElement("LI");
+     li.class="li";
+     ul.appendChild(li);
+     var a=document.createElement("A");
+     a.href="#";
+     var textnode = document.createTextNode("Ауцхаймер");
+     a.appendChild(textnode);
+     li.appendChild(a);
+
+   }
+  }
+
+</script>
+
+  <ul id="myUL">
+    <li class="li"><a href="#">Ауцхаймер</a></li>
+    <li class="li"><a href="#">Диабет</a></li>
+
+    <li class="li"><a href="#">Стомашни проблеми</a></li>
+  </ul>
+
+
+  </body>
+
+  </head>
