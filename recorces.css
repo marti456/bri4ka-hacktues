@@ -1,0 +1,94 @@
+body{
+background-color: grey;
+  margin: 0;
+  font-family: Comic;
+
+
+}
+
+
+h1{
+text-align:center;
+
+}
+
+ul,li{
+font-size: 30px;
+
+margin-left:30px;
+
+}
+div.a {
+    text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #111;
+}
+
+.topnav a {
+  float: left;
+  color: #333;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #111;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #111;
+  color: white;
+}
+</style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float: left;
+  width: 20%;
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #66ccff;
+}
+.main {
+  float: center;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.right {
+   background-color: #66ccff;
+  float: right;
+  height: 100;
+  width: 500;
+  padding: 115px 15px;
+  margin-top: 105px;
+
+}
+
+
+@media only screen and (max-width:800px) {
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
