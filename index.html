@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+use Encode;
+use Encode::JavaScript::Cyrillic;
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+<meta charset=utf-8>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+<meta charset=utf-8>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 80%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+<meta charset=utf-8>
+<title>Начало</title>
+<style>
+
+  body {
+    margin: 0;
+    font-family: Comic;
+    background-image: url(https://www.scalsys.com/wallpapers/white-minimalist-wallpaper/white-minimalist-wallpaper_338412.jpg);
+  }
+  div.a {
+    text-align: center;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: #ffff;
+  }
+  .topnav a {
+    float: left;
+    color: #333;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .topnav a:hover {
+    color: #33bbff;
+  }
+  .topnav a.active {
+    background-color: #33bbff;
+    color: white;
+  }
+  hr{
+    border-style: solid;
+    border-width: 0.5px;
+    color: grey;
+  }
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  .menu {
+    padding-left: 100px;
+    float:right;
+    text-align: center;
+    width: 20%;
+  }
+  .menuitem {
+    padding: 8px;
+    margin-top: 7px;
+    border-bottom: 1px solid #66ccff;
+  }
+  .main {
+    float: center;
+    width: 60%;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+  .right {
+   background-color: #66ccff;
+    float: left;
+    height: 100;
+    width: 500;
+    margin-top: 105px;
+  }
+  @media only screen and (max-width:800px) {
+    .main {
+      width: 80%;
+    }
+    .right {
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width:500px) {
+    .menu, .main, .right {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<hr>
+ <h1 style="background-color: #0099e6; text-align: center;color: white; font-size:300%; background-size:300%">Превенция</h1>
+<body style="font-family:Comic;">
+  <hr style="margin-top: 0;margin-bottom: 0">
+  <div class="topnav">
+     <a class="active" href="index.html">Начало</a>
+    <a href="izt.html">Източници</a>
+    <a  href="kon.html">Контакти</a>
+  </div>
+  <hr style="margin-top: 0%;">
+  <body style="font-family:Comic;">
+
+  <input type="text" id="myInput" oninput="asd()" placeholder="Търси симптоми..." title="Търсачка">
+
+
+<script type="text/javascript">
+  var alchaimer=["алцхаймер", "памет"];
+  var diabet=["наднормено", "често", "уриниране", "тегло", "бавно", "зарастване", "рани диабет"];
+  var gastro=["болки", "корема", "панкреатит", "стомах", "гастро", "стомах панкреас"];
+  var kuso=["недовиждане", "късогледство", "умора", "очите"];
+
+  function view_if_alc(vuv_text, ul){
+    words=vuv_text.match(/\S+/g);
+    var x;
+    for (x=0;x<words.length; x++){
+      duma=words[x];
+      var y;
+      for (y=0; y<alchaimer.length; y++){
+        var text1=alchaimer[y];
+        var res=text1.indexOf(duma);
+        if (res > -1){
+          var li=document.createElement("LI");
+          ul.appendChild(li);
+          var a=document.createElement("A");
+          a.href="alc.html";
+          var textnode = document.createTextNode("Алцхаймер");
+          a.appendChild(textnode);
+          li.appendChild(a);
+          return;
+        }
+       
+      }
+    }
+  }
+  function view_if_diab(vuv_text, ul){
+    words=vuv_text.match(/\S+/g);
+    var x;
+    for (x=0; x<words.length; x++) {
+      duma=words[x];
+      var y;
+      console.log(vuv_text);
+      for (y=0; y<diabet.length; y++) {
+        text2=diabet[y];
+        console.log(text2)
+        var res=text2.indexOf(duma);
+          if (res > -1) {
+          var li=document.createElement("LI");
+          li.class="diab";
+          ul.appendChild(li);
+          var a=document.createElement("A");
+          a.href="dia.html";
+          var textnode = document.createTextNode("Диабет");
+          a.appendChild(textnode);
+          li.appendChild(a);
+          return;
+         
+          }/* else{
+            var li=document.querySelectorAll('#diab li');
+            li.parentNode.removeChild(li);
+          }*/
+      }
+    }
+  }
+  function view_if_gastro(vuv_text, ul){
+    words=vuv_text.match(/\S+/g)  
+    var x;
+    for (x=0;x<words.length; x++){
+      duma=words[x];
+      var y;
+      for (y=0; y<gastro.length; y++){
+        var text3=gastro[y];
+        var res=text3.indexOf(duma);
+        if (res> -1 ){
+          var li=document.createElement("LI");
+          li.class="gastro";
+          ul.appendChild(li);
+          var a=document.createElement("A");
+          a.href="stom.html";
+          var textnode = document.createTextNode("Стомашни проблеми");
+          a.appendChild(textnode);
+          li.appendChild(a);
+          return;
+        }/* else{
+            var li=document.querySelectorAll('#gastro li');
+            li.parentNode.removeChild(li);
+      }*/
+      }
+    }
+  }
+  function view_if_kusogl(vuv_text, ul){
+    words=vuv_text.match(/\S+/g)  
+    var x;
+    for (x=0;x<words.length; x++){
+      duma=words[x];
+      var y;
+      for (y=0; y<kuso.length; y++){
+        var text4=kuso[y];
+        var res=text4.indexOf(duma);
+        if (res> -1 ){
+          var li=document.createElement("LI");
+          li.class="kusogledstvo";
+          ul.appendChild(li);
+          var a=document.createElement("A");
+          a.href="kys.html";
+          var textnode = document.createTextNode("Късогледство");
+          a.appendChild(textnode);
+          li.appendChild(a);
+          return;
+        }/* else{
+            var li=document.querySelectorAll('#gastro li');
+            li.parentNode.removeChild(li);
+      }*/
+      }
+    }
+  }
+  function asd(){
+    ul=document.getElementById("myUL");
+    $('#myUL').empty();
+    var text=document.getElementById("myInput").value;
+    if(!text) {
+      $('#myUL').empty();
+    } else {
+      view_if_alc(text, ul);
+      view_if_diab(text, ul);
+      view_if_gastro(text, ul);
+      view_if_kusogl(text, ul);
+    }
+  }
+</script>
+
+  <ul id="myUL">
+    <li class="li"><a href="alc.html">Алцхаймер</a></li>
+    <li class="li"><a href="dia.html">Диабет</a></li>
+
+    <li class="li"><a href="stom.html">Стомашни проблеми</a></li>
+    <li class="li"><a href="kys.html">Късогледство</a></li>
+</ul>
+  </body>
+</html>

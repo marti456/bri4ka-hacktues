@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="vyp.css">
+	<meta charset="utf-8">
+	<title>Въпросник късогледство</title>
+</head>
+<body>
+							<h1 align="center">Тест за късогледство</h1>
+	<h2 align="center">Картината трябва да е с големина на (!кредитна карта!).
+	    Отдалечете се на 1м и 30см. </br>
+		От това разстояние трябва да виждате наи-малките букви.
+		Препоръчително е да отидете на очен лекар ако ги виждате
+	    размазано или изобщо не я разпознавате</h2>
+ 
+<button class="myButton" onclick="in1()"style="float: left" >Широчина(+20px)</button>
+<button class="myButton" onclick="in2()"style="float: left">Широчина(-20px)</button>
+<button class="myButton" onclick="de2()"style="float: right">Височина(-20px)</button>
+<button class="myButton" onclick="de1()"style="float: right">Височина(+20px)</button>
+
+<style type="text/css">
+	 margin-left: auto;
+ 	 margin-right: auto;
+</style>
+<style type="text/css">
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+style "font-weight: 900";
+</style>"
+<img src="https://www.medindia.net/patients/calculators/images/snellen-chart.jpg" alt="Тест за късогледство"  height="300" width="200" class="center"id ="pict">
+ <a href="index.html">
+  <button style="margin-left: 540px" class="myButton">Върни се в началото</button>
+</a>
+<script type="text/javascript">
+	var wid=200;
+	var heig=300;
+	function in1(){
+		console.log('------------');
+		console.log(document.getElementById("pict").getAttribute('src'));
+		document.getElementById("pict").setAttribute('width', (wid+10));
+		wid=wid+10; 
+	}
+	function in2(){
+		var wid=200;
+		console.log('------------');
+		console.log(document.getElementById("pict").getAttribute('src'));
+		document.getElementById("pict").setAttribute('width',(wid-10));
+		wid=wid+10; 
+	}
+	function de1(){
+		console.log('------------');
+		console.log(document.getElementById("pict").getAttribute('src'));
+		document.getElementById("pict").setAttribute('height',(heig+10));
+		heig=heig+10;
+	}
+	function de2(){
+		var heig=300;
+		console.log('------------');
+		console.log(document.getElementById("pict").getAttribute('src'));
+		document.getElementById("pict").setAttribute('height',(heig-10));
+		heig=heig+10;
+	}
+</script>
+</body>
+</html>
