@@ -1,0 +1,108 @@
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+    <script src="godini.js">
+    </script>
+  <title>
+    въпроси
+  </title>
+  <style>
+    input  {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:5px 29px;
+	text-shadow:0px 1px 0px #2f6627;
+}
+// Взето от https://www.bestcssbuttongenerator.com/
+  </style>
+</head>
+<body>
+
+<div id="questions">
+  <p id="question"></p>
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+</div>
+<div id="loading">
+  <p>izchakai|</p>
+</div>
+<div id="results">
+  <p id="result"></p>
+  <button onclick="goHome()">Върни се в началото</button>
+</div>
+<script>
+function setQuestion(number) {
+  if(number>=questions.length) {viewResults(points, questions)};
+  q = questions[number];
+  $("p#question")[0].innerText = q['question']
+  $("input[type=submit]")[0].value = q['answers'][0]
+  $("input[type=submit]")[1].value = q['answers'][1]
+  $("input[type=submit]").off();
+  $("input[type=submit]").click(function () {
+    answer = $(this).attr('value')
+    if (answer == q['correct_answer']) {
+      if (number==0){
+        points=points - 2;
+      }else{
+          points=points+1;
+      }
+    }
+
+    question_number = question_number + 1;
+    setQuestion(question_number);
+    })
+  }
+
+  function viewResults(points, arr){
+    var par=document.getElementById("result");
+    if (points>=0.5*arr.length){
+      par.innerHTML="Препоръчително е да се видите с лекар";
+    } else{
+      par.innerHTML="Нямате признаци за заболяването";
+    }
+    hideVuprosi();
+    showResults();
+  }
+
+  function showResults() {
+      $("#results").show();
+
+  }
+
+  function hideVuprosi() {
+    $("#questions").hide();
+    $("#loading").hide();
+  }
+
+  function hideResults(){
+    $("#results").hide();
+    $("#loading").hide();
+  }
+var question_number = 0;
+var points=0;
+questions = [
+  {question:'Навършили ли сте 50 години?', answers:["Над", "Под"], correct_answer:"Над"},
+  {question:'Справяте ли се с ежедневните си задължения?', answers:["Да", "Не"], correct_answer:"Не"},
+  {question:'Употребявате ли тютюневи изделия?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Страдате ли от диабет?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Харесва ли Ви да сте в големи и шумни копании?', answers:["Да", "Не"], correct_answer:"Не"},
+  {question:'Чувствате ли се неуверени, когато вършите работа, която ви е добре позната?', answers:["Да", "Не"], correct_answer:"Не"},
+ 
+]
+hideResults();
+setQuestion(question_number);
+
+
+
+</script>
+</body>
+</html>
