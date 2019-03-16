@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Тест за късогледство</title>
+</head>
+<body>
+							<h1 align="center">Тест за късогледство</h1>
+	<h2 >Картината трябва да е с големина на (!кредитна карта!).
+	    Отдалечете се на метър идвадесет и три сантиметра 
+	    (1м и 30см).
+		От това разстояние трябва да виждате наи-малките букви.
+		Препоръчително е да отидете на очен лекар ако ги виждате
+	    размазано</h2>
+<button onclick="in1()"style="float: left">Широчина(+20px)</button>
+<button onclick="in2()"style="float: left">Широчина(-20px)</button>
+<button onclick="de2()"style="float: right">Височина(-20px)</button>
+<button onclick="de1()"style="float: right">Височина(+20px)</button>
+
+<style type="text/css">
+	 margin-left: auto;
+ 	 margin-right: auto;
+</style>
+<style type="text/css">
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+style "font-weight: 900";
+</style>"
+<img src="https://www.medindia.net/patients/calculators/images/snellen-chart.jpg" alt="Тест за късогледство"  height="360" width="240" class="center"id ="pict">
+
+<script type="text/javascript">
+	var wid=240;
+	var heig=360;
+	function in1(){
+		console.log('------------');
+		console.log(document.getElementById("pict").getAttribute('src'));
+		document.getElementById("pict").setAttribute('width', (wid+10));
+		wid=wid+10; 
+	}
+	function in2(){
+		var wid=240;
+		console.log('------------');
+		console.log(document.getElementById("pict").getAttribute('src'));
+		document.getElementById("pict").setAttribute('width',(wid-10));
+		wid=wid+10; 
+	}
+	function de1(){
+		console.log('------------');
+		console.log(document.getElementById("pict").getAttribute('src'));
+		document.getElementById("pict").setAttribute('height',(heig+10));
+		heig=heig+10;
+	}
+	function de2(){
+		var heig=369;
+		console.log('------------');
+		console.log(document.getElementById("pict").getAttribute('src'));
+		document.getElementById("pict").setAttribute('height',(heig-10));
+		heig=heig+10;
+	}
+</script>
+</body>
+</html>
