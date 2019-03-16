@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<title <img src="cro.jpg">page </title>
+<link rel="stylesheet" type="text/css" href="csspage.css" >
+<link rel="icon" type="image/ico" href="cro.jpg" />
+</HEAD>
+
+
+<BODY>
+
+
+  <div class="topnav">
+    <a class="active" href="#glavna stranica">Home</a>
+    <a href="recorces.html">Източници</a>    
+    <a href="">Контакти</a>
+    
+  </div>
+    <img src="pie.jpg" width="100px" align="left">
+  <img src="pie.jpg" width="100px" align="right">
+<h1>Prevention</h1>
+<hr/>
+ <br/>
+ 
+ <pre>
+Това е здравно-превентативен сайт, 
+  който изчислява вероятността да имате заболяване с ясно изразени симптоми. 
+ 
+Отгорете на въпросите, подхождащи на Вас.
+  
+  </pre>
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="fall.jpg" height="42" width="42">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="undersea.jpg" height="42" width="42">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="dochear.jpg" height="42" width="42">
+  <div class="text"></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+</BODY>
+</HTML>
