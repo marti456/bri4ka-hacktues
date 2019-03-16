@@ -1,0 +1,61 @@
+body{
+  background-image: url("https://www.scalsys.com/wallpapers/white-minimalist-wallpaper/white-minimalist-wallpaper_338412.jpg"); ;
+
+
+}
+h1{
+  background-color: #0099e6;
+   text-align: center;
+   color:white;
+    font-size:500%;
+     background-size:500%;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+#question{
+  margin: 0 5%;
+  font-size: 60px;
+  text-align:center; 
+  cursor:help; 
+
+}
+#result{
+  margin: 0 5%;
+  font-size: 60px;
+  text-align:center; 
+  cursor:help; 
+
+}
+hr{
+    border-style: solid;
+    border-width: 0.5px;
+    color: grey;
+  }
+
+.myButton {
+  background-color:#00ffff;
+  -moz-border-radius:42px;
+  -webkit-border-radius:42px;
+  border-radius:65px;
+  border:3px solid  #00cccc;
+  display:inline-block;
+  cursor:pointer;
+  color:#000000;
+  font-family:Arial;
+  font-size:12px;
+  font-weight:bold;
+  padding:32px 30px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #2f6627;
+}
+.myButton:hover {
+  background-color:#3333ff;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+

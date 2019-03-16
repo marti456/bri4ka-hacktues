@@ -1,6 +1,8 @@
-<html>
+<!DOCTYPE html>
+ <html>
 <head>
-
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Въпроси.css">
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -9,13 +11,25 @@
     <script src="godini.js">
     </script>
   <title>
-    Въпросник Алцхаймер
+    Въпросник Диабет
   </title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="Въпроси.css">
+  <style>
+    input  {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	padding:5px 29px;
+	text-shadow:0px 1px 0px #2f6627;
+}
+// Взето от https://www.bestcssbuttongenerator.com/
+  </style>
 </head>
 <body>
-<head><h1>Въпросник Алцхаймер</h1></head>
+<h1>Въпроник Диабет</h1>
 <hr>
 <div id="questions">
   <p id="question"></p>
@@ -30,7 +44,7 @@
   <br>
   <br>
   <input style="margin-left: 350px" class="myButton" type="submit" name="otgovor" value="">
-  <input style="margin-left: 300px" class="myButton" type="submit" name="otgovor" value="">
+  <input style="margin-left: 350px" class="myButton" type="submit" name="otgovor" value="">
 </div>
 <div id="loading">
   <p>izchakai|</p>
@@ -90,16 +104,16 @@ function setQuestion(number) {
 var question_number = 0;
 var points=0;
 questions = [
-  {question:'Навършили ли сте 50 години?', answers:["Над", "Под"], correct_answer:"Над"},
-  {question:'Справяте ли се с ежедневните си задължения?', answers:["Да", "Не"], correct_answer:"Не"},
-  {question:'Употребявате ли тютюневи изделия?', answers:["Да", "Не"], correct_answer:"Да"},
-  {question:'Страдате ли от диабет?', answers:["Да", "Не"], correct_answer:"Да"},
-  {question:'Харесва ли Ви да сте в големи и шумни копании?', answers:["Да", "Не"], correct_answer:"Не"},
-  {question:'Чувствате ли се неуверени, когато вършите работа, която ви е добре позната?', answers:["Да", "Не"], correct_answer:"Не"},
- 
+  {question:'С наднормено тегло ли сте?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Някой от предишните ви поколения страдал ли е от диабед?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Оринирате ли често?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Колко бързо зарастват раните ви?', answers:["Нормално бързо", "По-скоро бавно"], correct_answer:"По-скоро бавно"},
+  {question:'Чувствате ли се гладни през повечето от времето?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Губите ли тегло?', answers:["Да", "Не"], correct_answer:"Малки"}
 ]
 hideResults();
 setQuestion(question_number);
 </script>
 </body>
 </html>
+      
