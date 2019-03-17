@@ -16,8 +16,10 @@ use Encode::JavaScript::Cyrillic;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 <meta charset=utf-8>
-
 <style>
+h1{
+    cursor: default;
+  }
 * {
   box-sizing: border-box;
 }
@@ -53,7 +55,6 @@ use Encode::JavaScript::Cyrillic;
 <meta charset=utf-8>
 <title>Начало</title>
 <style>
-
   body {
     margin: 0;
     font-family: Comic;
@@ -141,16 +142,18 @@ use Encode::JavaScript::Cyrillic;
   </div>
   <hr style="margin-top: 0%;">
   <body style="font-family:Comic;">
-
   <input type="text" id="myInput" oninput="asd()" placeholder="Търси симптоми..." title="Търсачка">
-
-
+  <ul id="myUL">
+    <li class="li"><a href="par.html">Алцхаймер</a></li>
+    <li class="li"><a href="par2.html">Диабет</a></li>
+    <li class="li"><a href="par4.html">Стомашни заболявания</a></li>
+    <li class="li"><a href="par3.html">Късогледство</a></li>
+</ul>
 <script type="text/javascript">
   var alchaimer=["алцхаймер", "памет"];
   var diabet=["наднормено", "често", "уриниране", "тегло", "бавно", "зарастване", "рани диабет"];
   var gastro=["болки", "корема", "панкреатит", "стомах", "гастро", "стомах панкреас"];
   var kuso=["недовиждане", "късогледство", "умора", "очите"];
-
   function view_if_alc(vuv_text, ul){
     words=vuv_text.match(/\S+/g);
     var x;
@@ -164,13 +167,12 @@ use Encode::JavaScript::Cyrillic;
           var li=document.createElement("LI");
           ul.appendChild(li);
           var a=document.createElement("A");
-          a.href="alc.html";
+          a.href="par.html";
           var textnode = document.createTextNode("Алцхаймер");
           a.appendChild(textnode);
           li.appendChild(a);
           return;
         }
-       
       }
     }
   }
@@ -190,12 +192,11 @@ use Encode::JavaScript::Cyrillic;
           li.class="diab";
           ul.appendChild(li);
           var a=document.createElement("A");
-          a.href="dia.html";
+          a.href="par2.html";
           var textnode = document.createTextNode("Диабет");
           a.appendChild(textnode);
           li.appendChild(a);
           return;
-         
           }/* else{
             var li=document.querySelectorAll('#diab li');
             li.parentNode.removeChild(li);
@@ -217,7 +218,7 @@ use Encode::JavaScript::Cyrillic;
           li.class="gastro";
           ul.appendChild(li);
           var a=document.createElement("A");
-          a.href="stom.html";
+          a.href="par4.html";
           var textnode = document.createTextNode("Стомашни проблеми");
           a.appendChild(textnode);
           li.appendChild(a);
@@ -243,7 +244,7 @@ use Encode::JavaScript::Cyrillic;
           li.class="kusogledstvo";
           ul.appendChild(li);
           var a=document.createElement("A");
-          a.href="kys.html";
+          a.href="par3.html";
           var textnode = document.createTextNode("Късогледство");
           a.appendChild(textnode);
           li.appendChild(a);
@@ -269,13 +270,7 @@ use Encode::JavaScript::Cyrillic;
     }
   }
 </script>
+  
 
-  <ul id="myUL">
-    <li class="li"><a href="alc.html">Алцхаймер</a></li>
-    <li class="li"><a href="dia.html">Диабет</a></li>
-
-    <li class="li"><a href="stom.html">Стомашни проблеми</a></li>
-    <li class="li"><a href="kys.html">Късогледство</a></li>
-</ul>
   </body>
 </html>

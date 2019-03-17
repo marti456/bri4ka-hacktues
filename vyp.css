@@ -1,14 +1,13 @@
 body{
   background-image: url("https://www.scalsys.com/wallpapers/white-minimalist-wallpaper/white-minimalist-wallpaper_338412.jpg"); ;
-
-
 }
 h1{
   background-color: #0099e6;
    text-align: center;
    color:white;
-    font-size:500%;
-     background-size:500%;
+    font-size:300%;
+    cursor: default;
+     background-size:300%
 }
 * {
     box-sizing: border-box;
@@ -20,21 +19,18 @@ h1{
   font-size: 60px;
   text-align:center; 
   cursor:help; 
-
 }
 #result{
   margin: 0 5%;
   font-size: 60px;
   text-align:center; 
   cursor:help; 
-
 }
 hr{
     border-style: solid;
     border-width: 0.5px;
     color: grey;
   }
-
 .myButton {
   background-color:#00ffff;
   -moz-border-radius:42px;

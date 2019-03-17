@@ -1,14 +1,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="vyp.css">
+ <link rel="stylesheet" type="text/css" href="vyp.css">
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous">
   </script>
-    <script src="godini.js">
-    </script>
+
   <title>
     въпроси
   </title>
@@ -28,39 +27,25 @@
   </style>
 </head>
 <body>
-<h1>Въпроник Стомашни болести</h1>
+<h1 id="zagl">Стомашни болести</h1>
 <hr>
 <div id="questions">
-  <p id="question"></p>
+  <p style="font-size: 200%" id="question"></p>
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <input style="margin-left: 350px" class="myButton" type="submit" name="otgovor" value="">
+  <input style="margin-left: 400px" class="myButton" type="submit" name="otgovor" value="">
   <input style="margin-left: 350px" class="myButton" type="submit" name="otgovor" value="">
 </div>
 <div id="loading">
   <p>izchakai|</p>
 </div>
 <div id="results">
-  <p id="result"></p>
+  <p style="font-size: 200%" id="result"></p>
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <a href="file:///C:/Users/miren/Desktop/HACK%20TUES%205/%D0%9A%D1%80%D0%B0%D0%B5%D0%BD%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82/%D0%9D%D0%B0%D1%87%D0%B0%D0%BB%D0%BE.html">
+  <a href="index.html">
   <button style="margin-left: 500px" class="myButton" onclick="goHome()">Върни се в началото</button>
 </div>
 <script>
@@ -76,33 +61,29 @@ function setQuestion(number) {
     if (answer == q['correct_answer']) {
       points=points+1;
     }
-
     question_number = question_number + 1;
     setQuestion(question_number);
     })
   }
-
   function viewResults(points, arr){
     var par=document.getElementById("result");
-    if (points>=0.4*arr.length){
-      par.innerHTML="Препоръчително е да се видите с лекар";
+    var zaglavie=document.getElementById("zagl")
+    zaglavie.innerHTML="Резултати";
+    if (points>=0.6*arr.length){
+      par.innerHTML="Въз основа на преминатия тест ви препепоръчваме да посетите вашият вашият личен лекар или лекар специалсит ";
     } else{
-      par.innerHTML="Нямате признаци за заболяването";
+      par.innerHTML="Въз основа на преминатия тест се установи, че нямате симптомите на конкретната болест. <br> <br> Все па резултатите от теста не са достатъчни за поставяне на медицинска диагноза <br> Ако имате съмнения задължително посетете вашия личен лекар.";
     }
     hideVuprosi();
     showResults();
   }
-
   function showResults() {
       $("#results").show();
-
   }
-
   function hideVuprosi() {
     $("#questions").hide();
     $("#loading").hide();
   }
-
   function hideResults(){
     $("#results").hide();
     $("#loading").hide();
@@ -110,19 +91,16 @@ function setQuestion(number) {
 var question_number = 0;
 var points=0;
 questions = [
-  {question:'Консумирате ли алкохол ?', answers:["Да", "Не"], correct_answer:"Да"},
-  {question:'Страдали ли сте от бъбречо-каменна болест ?', answers:["Да", "Не"], correct_answer:"Да"},
-  {question:'Имате ли автоинмунни заболявания ?', answers:["Да", "Не"], correct_answer:"Да"},
-  {question:'Имате ли болки в стомаха след хранене ?', answers:["Да", "Не"], correct_answer:"Да"},
-  {question:'Имате ли често газове ?', answers:["Да", "Не"], correct_answer:"Да"},
-  {question:'Често ли преяждате ?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Консумирате ли алкохол?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Страдали ли сте от бъбречно-каменна болест?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Имате ли автоимунни заболявания?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Имате ли болки в стомаха след хранене?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Имате ли често газове?', answers:["Да", "Не"], correct_answer:"Да"},
+  {question:'Често ли преяждате?', answers:["Да", "Не"], correct_answer:"Да"},
   {question:'Храните ли се с мазни храни?', answers:["Да", "Не"], correct_answer:"Да"},
 ]
 hideResults();
 setQuestion(question_number);
-
-
-
 </script>
 </body>
 </html>
