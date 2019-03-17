@@ -10,6 +10,7 @@
   <title>
     въпроси
   </title>
+ 
 <meta charset=utf-8 /> 
   <style>
     input  {
@@ -25,30 +26,24 @@
 }
 // Взето от https://www.bestcssbuttongenerator.com/
   </style>
-  <link rel="stylesheet" type="text/css" href="dalto.css">
+  <link rel="stylesheet" type="text/css" href="daltoend.css">
 </head>
 <body>
 
-<div class="topnav">
-    <a class="active" href="#glavna stranica">Home</a>
-    <a href="recorces.html">Източници</a>    
-    <a href="">Контакти</a>
-    
-  </div>
-  
+
   
 <center>
 <div id="questions">
   <p id="question"></p>
-  <input type="submit" name="otgovor" value="">
-  <input type="submit" name="otgovor" value="">
+<input class="myButton" type="submit" name="otgovor" value="">
+<input class="myButton" type="submit" name="otgovor" value="">
 </div>
 <div id="loading">
-  <p>izchakai|</p>
+  <p> Изчакайте </p>
 </div>
 <div id="results">
   <p id="result"></p>
-  <button onclick="goHome()">Върни се в началото</button>
+  <button class="myButton" onclick="goHome()"><a href="alc.html">Върни се в началото</button>
 </div>
 
 
@@ -153,12 +148,14 @@ function setQuestion(number) {
       }
     }
     question_number = question_number + 1;
+	slideIndex = slideIndex+1;
+	showSlides(slideIndex);
     setQuestion(question_number);
     })
   }
   function viewResults(points, arr){
     var par=document.getElementById("result");
-    if (points>=0.5*arr.length){
+    if (points>=0.4*arr.length){
       par.innerHTML="Препоръчително е да се видите с лекар";
     } else{
       par.innerHTML="Нямате признаци за заболяването";
@@ -180,12 +177,12 @@ function setQuestion(number) {
 var question_number = 0;
 var points=0;
 questions = [
-  {question:'Какво виждате?', answers:["12", "-"], correct_answer:"12"},
-  {question:'Какво виждате?', answers:["-", "2"], correct_answer:"2"},
-  {question:'Какво виждате?', answers:["42", "4"], correct_answer:"42"},
-  {question:'Какво виждате?', answers:["74", "71"], correct_answer:"74"},
-  {question:'Какво виждате?', answers:["3", "6"], correct_answer:"6"},
- // {question:'Какво виждате?' answers:["Да", "Не"], correct_answer:"Не"},
+  {question:'Какво виждате?', answers:[" 12 ", " - "], correct_answer:" - "},
+  {question:'Какво виждате?', answers:[" - ", " 2 "], correct_answer:" - "},
+  {question:'Какво виждате?', answers:[" 42 ", " 4 "], correct_answer:" 4 "},
+  {question:'Какво виждате?', answers:[" 74 ", " 71 "], correct_answer:" 71 "},
+  {question:'Какво виждате?', answers:[" 3 ", " 6 "], correct_answer:" 3 "},
+ 
  
 ]
 hideResults();
